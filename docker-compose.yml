@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  jupyter:
+    image: jupyter/minimal-notebook:lastes
+    environment:
+      - JUPYTER_TOKEN=hi
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/app
+    build: . 
+
+  crawler:
+    build: .
+    volumes:
+      - .:/app
